@@ -5,7 +5,7 @@ region     = "${var.region}"
 }
 
 resource "aws_ebs_volume" "ebsvolume" {
-  availability_zone = "us-east-2a"
+  availability_zone ="us-east-1a"
   size = 1
   encrypted = false
   tags = {
@@ -15,10 +15,10 @@ resource "aws_ebs_volume" "ebsvolume" {
 }
 
 resource "aws_instance" "azterraec2" {
-  ami = "ami-0cbf975b93d9cd3f9"
+  ami = "ami-04a41c7299f3874c5"
   instance_type = "t2.micro"
-  subnet_id = "subnet-092cdeac13b36beb4"
-  vpc_security_group_ids = ["sg-039e7f1a6a983f220"]
+  subnet_id = "subnet-0410fd190e31b6625"
+  vpc_security_group_ids = ["sg-0c1163c54bca806a5"]
   user_data = <<-EOF
       #!/bin/sh
       sudo apt-get update && sudo apt upgrade -y 
@@ -27,8 +27,8 @@ resource "aws_instance" "azterraec2" {
       sudo systemctl start apache2
       EOF
   associate_public_ip_address = true
-  key_name = "ubu-ohio-kp"
-  availability_zone = "us-east-2a"
+  key_name = "ec2-nv-kp"
+  availability_zone = "us-east-1a"
   tags = {
     Name = "ec2-terraform"
   }
