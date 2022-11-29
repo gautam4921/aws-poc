@@ -6,7 +6,7 @@ region     = "${var.region}"
 
 resource "aws_ebs_volume" "ebsvolume" {
   availability_zone ="us-east-1a"
-  size = 10
+  size = 1
   encrypted = false
   tags = {
     Name = "azterravol"
