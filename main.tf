@@ -1,5 +1,6 @@
 provider "aws" {
-region     = "${var.region}"
+   region     = "us-east-1"
+   shared_credentials_file = "root/.aws/credentials"
 }
 
 resource "aws_ebs_volume" "ebsvolume" {
@@ -9,7 +10,6 @@ resource "aws_ebs_volume" "ebsvolume" {
   tags = {
     Name = "azterravol"
   }
-
 }
 
 resource "aws_instance" "azterraec2" {
