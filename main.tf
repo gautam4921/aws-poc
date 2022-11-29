@@ -1,6 +1,17 @@
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "3.74.0"
+    }
+  }
+}
+
 provider "aws" {
+   profile    = "test"
    region     = "us-east-1"
-   shared_credentials_files = "root/.aws/credentials"
+   access_key = "AKIASEJWFMFUZHDWSLHU"
+   secret_key = "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"
 }
 
 resource "aws_ebs_volume" "ebsvolume" {
