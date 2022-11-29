@@ -10,8 +10,8 @@ terraform {
 provider "aws" {
    profile    = "test"
    region     = "us-east-1"
-   access_key = "AKIASEJWFMFUZHDWSLHU"
-   secret_key = "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"
+   access_key = ""
+   secret_key = ""
 }
 
 resource "aws_ebs_volume" "ebsvolume" {
