@@ -16,7 +16,7 @@ provider "aws" {
 
 resource "aws_ebs_volume" "ebsvolume" {
   availability_zone ="us-east-1a"
-  size = 1
+  size = 10
   encrypted = false
   tags = {
     Name = "azterravol"
